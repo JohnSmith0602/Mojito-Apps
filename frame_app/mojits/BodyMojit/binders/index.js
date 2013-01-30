@@ -1,26 +1,16 @@
-/*
- * Copyright (c) 2011-2013, Yahoo! Inc.  All rights reserved.
- * Copyrights licensed under the New BSD License.
- * See the accompanying LICENSE file for terms.
- */
-
 /*jslint anon:true, sloppy:true, nomen:true*/
-
 YUI.add('BodyMojitBinderIndex', function(Y, NAME) {
 
 /**
- * The BodyMojitBinderIndex module.
+ * The fooBinderIndex module.
  *
- * @module BodyMojitBinderIndex
+ * @module fooBinderIndex
  */
 
     /**
-     * Constructor for the Binder class.
+     * Constructor for the fooBinderIndex class.
      *
-     * @param mojitProxy {Object} The proxy to allow the binder to interact
-     *        with its owning mojit.
-     *
-     * @class Binder
+     * @class fooBinderIndex
      * @constructor
      */
     Y.namespace('mojito.binders')[NAME] = {
@@ -29,7 +19,7 @@ YUI.add('BodyMojitBinderIndex', function(Y, NAME) {
          * Binder initialization method, invoked after all binders on the page
          * have been constructed.
          */
-        init: function (mojitProxy) {
+        init: function(mojitProxy) {
             this.mojitProxy = mojitProxy;
         },
 
@@ -39,10 +29,11 @@ YUI.add('BodyMojitBinderIndex', function(Y, NAME) {
          *
          * @param node {Node} The DOM node to which this mojit is attached.
          */
-        bind: function (node) {
-            this.node = node;
+        bind: function(node) {
+            var me = this;
+            node.append('<p>We are now ready to control the body of this page!!!</p>');
         }
 
     };
 
-}, '0.0.1', {requires: []});
+}, '0.0.1', {requires: ['mojito-client']});

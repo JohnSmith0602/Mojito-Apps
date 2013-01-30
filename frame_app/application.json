@@ -1,30 +1,32 @@
-[
-    {
-        "settings": [ "master" ],
-        "appPort": "8666",
-        "specs": {
-          "ms": {
+[{
+    "settings": ["master"],
+    "appPort": "8666",
+    "specs": {
+        "ms": {
             "type": "IntlHTMLFrameMojit",
             "config": {
-              "children": {
-                "header": {
-                  "type": "HeaderMojit"
-                },
-                "body": {
-                  "type": "BodyMojit"
-                },
-                "footer": {
-                 "type": "FooterMojit"
+                "children": {
+                    "header": {
+                        "type": "HeaderMojit"
+                    },
+                    "body": {
+                        "type": "BodyMojit"
+                    },
+                    "footer": {
+                        "type": "FooterMojit"
+                    }
                 }
-              }
             }
-          }
-       }
-    },
-    {
-        "settings": [ "environment:development" ],
-        "staticHandling": {
-            "forceUpdate": true
         }
     }
-]
+}, {
+    "settings": ["environment:development"],
+    "staticHandling": {
+        "forceUpdate": true
+    },
+    "yui": {
+        "config": {
+            "combine": false
+        }
+    }
+}]
